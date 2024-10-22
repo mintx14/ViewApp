@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">ViewApp</string>
+    <string name="user_name">Enter your username</string>
+    <string name="user_pwd">Your password</string>
+    <string name="btn_login">Enter</string>
+    <string name="greet">Hi Buddy</string>
+    <string name="person_name">Enter your full name</string>
+    <string name="email_address">Your email@email.com</string>
+    <string name="phone_no">Contact number example: +6013456789</string>
+    <string name="date_birth">your DOB eg: 27/8/2000</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+
+
+</resources>
