@@ -1,7 +1,8 @@
 package my.utem.ftmk.ViewApp;
 
-import android.os.Bundle;
+
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.View;
 
 import androidx.activity.EdgeToEdge;
@@ -10,19 +11,21 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import my.utem.ftmk.ViewApp.databinding.ActivityRegisterBinding;
+import my.utem.ftmk.ViewApp.databinding.ActivityLoginBinding;
 
-public class ActivityRegister extends AppCompatActivity {
+public class ActivityLogin extends AppCompatActivity {
 
-    ActivityRegisterBinding binding;
+     ActivityLoginBinding binding;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityRegisterBinding.inflate(getLayoutInflater());
+        binding = ActivityLoginBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        binding.btnEnter.setOnClickListener(this::fnLogin);
 //        EdgeToEdge.enable(this);
-//        setContentView(R.layout.activity_register);
+//        setContentView(R.layout.activity_login);
 //        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
 //            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
 //            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -32,9 +35,6 @@ public class ActivityRegister extends AppCompatActivity {
 
     @Override
     protected void onStart() {
-        Intent intent = getIntent();
-        binding.edtName.setText(intent.getStringExtra("username"));
-        binding.edtPassword.setText(intent.getStringExtra("password"));
         super.onStart();
     }
 
@@ -63,11 +63,13 @@ public class ActivityRegister extends AppCompatActivity {
         super.onRestart();
     }
 
-    public void fnCalculate(View view) {
-        String yearBirth = binding.edtDOB.getText().toString();
-        int yearOfBirth = Integer.parseInt(yearBirth);
-        int age = 2024 - yearOfBirth;
+    public void fnLogin(View view) {
+        String username = binding.edtUsername.getText().toString();
+        String password = binding.edtPassword.getText().toString();
 
-        binding.edtDOB.setText("Your are " + age + " years old");
+        Intent intent = new Intent(this, ActivityRegister.class);
+        intent.putExtra("username", username);
+        intent.putExtra("password", password);
+        startActivity(intent);
     }
 }
