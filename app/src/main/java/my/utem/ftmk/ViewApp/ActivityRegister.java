@@ -21,6 +21,8 @@ public class ActivityRegister extends AppCompatActivity {
         binding = ActivityRegisterBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        binding.btnNext.setOnClickListener(this::fnNext);
+
 //        EdgeToEdge.enable(this);
 //        setContentView(R.layout.activity_register);
 //        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
@@ -69,5 +71,11 @@ public class ActivityRegister extends AppCompatActivity {
         int age = 2024 - yearOfBirth;
 
         binding.edtDOB.setText("Your are " + age + " years old");
+    }
+
+
+    public void fnNext(View view) {
+        Intent intent = new Intent(this, ActivityExpense.class);
+        startActivity(intent);
     }
 }
