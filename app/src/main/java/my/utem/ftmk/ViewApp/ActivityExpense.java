@@ -71,6 +71,7 @@ public class ActivityExpense extends AppCompatActivity {
 
     private void fnTakePic(View view) {
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        startActivityForResult(intent, 0);
     }
 
     @SuppressLint("SetTextI18n")
