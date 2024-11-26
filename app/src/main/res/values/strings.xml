@@ -10,6 +10,8 @@
     <string name="date_birth">your DOB eg: 27/8/2000</string>
     <string name="male">Male</string>
     <string name="female">Female</string>
+    <string name="nav_open" />
+    <string name="nav_close" />
 
 
 </resources>
