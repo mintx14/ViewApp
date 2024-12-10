@@ -23,7 +23,6 @@ public class ActivityLogin extends AppCompatActivity {
 
      ActivityLoginBinding binding;
 
-
      private DrawerLayout drawerLayout;
      private ActionBarDrawerToggle actionBarDrawerToggle;
      private NavigationView navigationView;
