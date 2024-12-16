@@ -8,19 +8,20 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import my.utem.ftmk.ViewApp.R;
 
-public class StudentViewHolder extends RecyclerView.ViewHolder{
+public class StudentViewHolder extends RecyclerView.ViewHolder {
 
-    private final TextView lblFullname, lblStudNo,lblGender, lblBirthdate, lblEmail, lblState;
+    private final TextView lblFullname, lblStudNo, lblGender, lblBirthdate, lblEmail, lblState;
 
-    public StudentViewHolder(View itemView, TextView lblFullname, TextView lblStudNo, TextView lblGender, TextView lblBirthdate, TextView lblEmail, TextView lblState) {
+    public StudentViewHolder(@NonNull View itemView) {
         super(itemView);
 
-        this.lblFullname = itemView.findViewById(R.id.edtFullName);
-        this.lblStudNo = itemView.findViewById(R.id.edtStudNum);
+        // Match variable names with their declarations
+        this.lblFullname = itemView.findViewById(R.id.lblFullName); // Fixed to lblFullname
+        this.lblStudNo = itemView.findViewById(R.id.lblStudNo);
         this.lblGender = itemView.findViewById(R.id.lblGender);
-        this.lblBirthdate = itemView.findViewById(R.id.edtBirthdate);
-        this.lblEmail = itemView.findViewById(R.id.edtEmail);
-        this.lblState = itemView.findViewById(R.id.spnState);
+        this.lblBirthdate = itemView.findViewById(R.id.lblBirthdate);
+        this.lblEmail = itemView.findViewById(R.id.lblEmail);
+        this.lblState = itemView.findViewById(R.id.lblState);
     }
 
     public TextView getLblFullname() {
